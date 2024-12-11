@@ -1,4 +1,4 @@
-# **Tutorial: Room - [Advent of Cyber 2024 - Day 10]**
+# **Tutorial: Room - Advent of Cyber 2024 - Day 10**
 
 ## 📖 Description
 In this room, the objective was to exploit a vulnerability in a Microsoft Word document containing a malicious macro. We used Metasploit to set up a reverse shell, which allowed us to remotely access the victim's machine and capture the flag.
