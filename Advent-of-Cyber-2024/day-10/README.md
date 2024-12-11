@@ -71,7 +71,7 @@ After setting up the exploit, we need to generate the malicious Word file with a
 ---
 
 ### 3️⃣ Handling the Connection in Metasploit
-After that, we configure Metasploit to listen for incoming connections.
+After that, we configure Metasploit to listen for incoming connections. The `[ATTACKERS_IP]` is the IP from our AttackBox.
 
 ```bash
 msfconsole
