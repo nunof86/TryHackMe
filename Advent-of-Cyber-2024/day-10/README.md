@@ -43,7 +43,7 @@ The attacker, Mayor Malware, needs to create a document with a malicious macro. 
 - Active account on [TryHackMe](https://tryhackme.com)
 - Basic knowledge of Metasploit and social engineering attacks.
 - Tools required:
-  - [Metasploit](https://metasploit.help.rapid7.com/docs/using-metasploit)
+  - [Metasploit](https://docs.metasploit.com/)
   - [Email client to send the malicious file using RainLoop]
 
 ---
