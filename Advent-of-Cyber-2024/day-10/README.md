@@ -44,14 +44,14 @@ The attacker, Mayor Malware, needs to create a document with a malicious macro. 
 - Basic knowledge of Metasploit and social engineering attacks.
 - Tools required:
   - [Metasploit](https://docs.metasploit.com/)
-  - [Email client to send the malicious file using RainLoop]
+  - Access to the mail server(Rainloop) to send the email
 
 ---
 
 ## 🚀 Step-by-Step Guide
 
 ### 1️⃣ Initial Setup in Metasploit
-First, we need to configure the Metasploit payload. We’ll use a `windows/meterpreter/reverse_tcp` payload to receive a reverse connection from the victim's machine.
+First, we need to configure the Metasploit payload. We’ll use a `windows/meterpreter/reverse_tcp` payload to receive a reverse connection from the victim's machine. The `[ATTACKERS_IP]` is the IP from our atack box.
 
 ```bash
 msfconsole
